@@ -29,19 +29,19 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         button = findViewById(R.id.button);
         ratingbar = findViewById(R.id.ratingBar);
-        i=0;
+        i = 0;
         button.setOnClickListener(v -> {
-            button.setText("Button Clicked "+i+" times");
+            button.setText("Button Clicked " + i + " times");
             i++;
             ratingbar.setRating(0f);
             CycleImage();
         });
-            ratingbar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
-                textView.setText("Thanks for giving the picture: "+rating);
+        ratingbar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+            textView.setText("Thanks for giving the picture: " + rating);
         });
     }
 
-    public void CycleImage() {
+    private void CycleImage() {
         imageView = findViewById(R.id.imageView);
         Random random = new Random();
         int i = random.nextInt(3);
