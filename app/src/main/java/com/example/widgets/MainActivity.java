@@ -6,15 +6,19 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.TextView;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
     ImageView imageView;
+    TextView textView;
     RatingBar ratingbar;
     Integer i;
 
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        textView = findViewById(R.id.textView);
         button = findViewById(R.id.button);
         ratingbar = findViewById(R.id.ratingBar);
         i=0;
@@ -30,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
             i++;
             ratingbar.setRating(0f);
             CycleImage();
+        });
+            ratingbar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+                textView.setText("Thanks for giving the picture: "+rating);
         });
     }
 
