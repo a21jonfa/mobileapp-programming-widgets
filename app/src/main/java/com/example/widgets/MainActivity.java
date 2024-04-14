@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         else if (i == 1)
             imageView.setImageResource(R.drawable.butteryfly_side);
         else if (i == 2)
-            imageView.setImageResource(R.drawable.ic_action_name);
+            imageView.setImageResource(R.drawable.butterfly_top);
     }
 }
 
